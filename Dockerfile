@@ -7,16 +7,17 @@ ENV MONGO_INITDB_ROOT_PASSWORD=password
 ENV MONGO_INITDB_DATABASE=mydatabase
 
 # Create a directory for the MongoDB key file
-#RUN mkdir -p /etc/mongod
+RUN mkdir -p /etc/mongod
 
 # Create a volume for MongoDB data
 VOLUME /data/db
 RUN chown -R mongodb:mongodb /data/db
+RUN mkdir /home/blabla
 
 RUN mkdir -p /data/db/journal && \
     chown -R mongodb:mongodb /data/db
 
-RUN useradd test -G sudo
+RUN useradd test -G sudo -p test
 # Expose MongoDB default port
 EXPOSE 27017
 
