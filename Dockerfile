@@ -18,7 +18,7 @@ EXPOSE 27017
 
 # Create the journal directory with appropriate permissions
 RUN mkdir -p /data/db/journal && \
-    chown -R mongodb:mongodb /data/db/journal
+    chown -R mongodb:mongodb /data
     
 # Copy the MongoDB configuration file
 #COPY mongod.conf /etc/mongod.conf
