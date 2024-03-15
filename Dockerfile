@@ -16,6 +16,10 @@ ENV MONGO_INITDB_DATABASE=mydatabase
 # Expose MongoDB default port
 EXPOSE 27017
 
+# Create the journal directory with appropriate permissions
+RUN mkdir -p /data/db/journal && \
+    chown -R mongodb:mongodb /data/db/journal
+    
 # Copy the MongoDB configuration file
 #COPY mongod.conf /etc/mongod.conf
 
