@@ -11,7 +11,7 @@ RUN mkdir -p /etc/mongod
 
 # Create a volume for MongoDB data
 VOLUME /data/db
-RUN chmod 600 /data/db -R
+RUN chown -R mongodb:mongodb /data/db
 
 # Expose MongoDB default port
 EXPOSE 27017
