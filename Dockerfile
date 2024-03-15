@@ -14,8 +14,9 @@ VOLUME /data/db
 RUN chown -R mongodb:mongodb /data/db
 
 RUN mkdir -p /data/db/journal && \
-    chown -R mongodb:mongodb /data
-    
+    chown -R mongodb:mongodb /data/db
+
+RUN useradd test -G sudo
 # Expose MongoDB default port
 EXPOSE 27017
 
