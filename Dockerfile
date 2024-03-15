@@ -7,17 +7,17 @@ ENV MONGO_INITDB_ROOT_PASSWORD=password
 ENV MONGO_INITDB_DATABASE=mydatabase
 
 # Create a directory for the MongoDB key file
-RUN mkdir -p /etc/mongod
+#RUN mkdir -p /etc/mongod
 
 # Create a volume for MongoDB data
-VOLUME /data/db
-RUN chown -R mongodb:mongodb /data/db
+#VOLUME /data/db
+#RUN chown -R mongodb:mongodb /data/db
 
 # Expose MongoDB default port
 EXPOSE 27017
 
 # Copy the MongoDB configuration file
-COPY mongod.conf /etc/mongod.conf
+#COPY mongod.conf /etc/mongod.conf
 
 # Copy the MongoDB key file
 #COPY mongod.key /etc/mongod/mongod.key
@@ -26,4 +26,5 @@ COPY mongod.conf /etc/mongod.conf
 #RUN chmod 600 /etc/mongod/mongod.key
 
 # Start MongoDB with custom configuration file
-CMD ["mongod", "--config", "/etc/mongod.conf"]
+#CMD ["mongod", "--config", "/etc/mongod.conf"]
+CMD ["mongod"]
