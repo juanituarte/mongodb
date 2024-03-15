@@ -22,7 +22,7 @@ EXPOSE 27017
 #COPY mongod.key /etc/mongod/mongod.key
 
 # Set permissions for the MongoDB key file
-RUN chmod 600 /etc/mongod/mongod.key
+#RUN chmod 600 /etc/mongod/mongod.key
 
 # Start MongoDB with custom configuration file
 CMD ["mongod", "--config", "/etc/mongod.conf"]
