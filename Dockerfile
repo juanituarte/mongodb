@@ -16,7 +16,7 @@ VOLUME /data/db
 EXPOSE 27017
 
 # Copy the MongoDB configuration file
-#COPY mongod.conf /etc/mongod.conf
+COPY mongod.conf /etc/mongod.conf
 
 # Copy the MongoDB key file
 #COPY mongod.key /etc/mongod/mongod.key
