@@ -2,8 +2,8 @@
 FROM mongo:latest
 
 # Create the journal directory with appropriate permissions
-RUN mkdir -p /data/db/journal && \
-    chown -R mongodb:mongodb /data/db
+RUN chown -R mongodb:mongodb /data/
+    
 
 # Start MongoDB
 CMD ["mongod"]
