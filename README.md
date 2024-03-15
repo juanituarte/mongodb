@@ -1,6 +1,3 @@
-# mongodb
-RatKillers - Mongodb
-
 # MongoDB Docker Image for OpenShift
 
 [![MongoDB Icon](https://webassets.mongodb.com/_com_assets/cms/mongodb_logo1-76twgcu2dm.png)](https://www.mongodb.com/)
