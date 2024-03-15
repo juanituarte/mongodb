@@ -1,5 +1,9 @@
 # Use the official MongoDB image from Docker Hub
 FROM mongo:latest
 
-# Expose MongoDB default port
-EXPOSE 27017
+# Create the journal directory with appropriate permissions
+RUN mkdir -p /data/db/journal && \
+    chown -R mongodb:mongodb /data/db
+
+# Start MongoDB
+CMD ["mongod"]
