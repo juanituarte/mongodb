@@ -10,16 +10,15 @@ ENV MONGO_INITDB_DATABASE=mydatabase
 RUN mkdir -p /etc/mongod
 
 # Create a volume for MongoDB data
-VOLUME /data/db
-RUN chown -R mongodb:mongodb /data/db
-RUN mkdir /home/blabla
+#VOLUME /data/db
+RUN mkdir -p /data/db/journal 
+RUN chown -R mongodb:mongodb /data/
 
-RUN mkdir -p /data/db/journal && \
-    chown -R mongodb:mongodb /data/db
-
-RUN useradd test -G sudo -p test
-# Expose MongoDB default port
+# Expose ports.
+#   - 27017: process
+#   - 28017: http
 EXPOSE 27017
+EXPOSE 28017
 
 # Create the journal directory with appropriate permissions
 
