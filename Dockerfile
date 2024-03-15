@@ -11,8 +11,8 @@ RUN mkdir -p /etc/mongod
 
 # Create a volume for MongoDB data
 #VOLUME /data/db
-RUN mkdir -p /data/db/journal 
-RUN chown -R mongodb:mongodb /data/
+#RUN mkdir -p /data/db/journal 
+#RUN chown -R mongodb:mongodb /data/
 
 # Expose ports.
 #   - 27017: process
