@@ -10,15 +10,17 @@ ENV MONGO_INITDB_DATABASE=mydatabase
 #RUN mkdir -p /etc/mongod
 
 # Create a volume for MongoDB data
-#VOLUME /data/db
-#RUN chown -R mongodb:mongodb /data/db
+VOLUME /data/db
+RUN chown -R mongodb:mongodb /data/db
 
+RUN mkdir -p /data/db/journal && \
+    chown -R mongodb:mongodb /data
+    
 # Expose MongoDB default port
 EXPOSE 27017
 
 # Create the journal directory with appropriate permissions
-RUN mkdir -p /data/db/journal && \
-    chown -R mongodb:mongodb /data
+
     
 # Copy the MongoDB configuration file
 #COPY mongod.conf /etc/mongod.conf
